@@ -49,6 +49,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     testImplementation 'org.springframework.security:spring-security-test'
 
+    /* Spring Batch */
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
+
     /* Redis */
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 

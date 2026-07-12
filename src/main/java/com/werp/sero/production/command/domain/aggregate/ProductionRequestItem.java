@@ -7,6 +7,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Table(name = "production_request_item")
 @NoArgsConstructor
@@ -24,6 +26,9 @@ public class ProductionRequestItem {
 
     @Column(nullable = false)
     private String status;
+
+    @Column(name = "updated_at", nullable = false)
+    private LocalDateTime updatedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pr_id", nullable = false)
@@ -73,4 +78,13 @@ public class ProductionRequestItem {
         }
     }
 
+    @PrePersist
+    protected void onCreate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
 }
