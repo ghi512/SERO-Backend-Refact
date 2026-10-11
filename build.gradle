@@ -61,7 +61,7 @@ dependencies {
     implementation 'io.awspring.cloud:spring-cloud-aws-starter-s3:3.2.1'
 
     /* PDF Generation */
-    implementation 'com.itextpdf:itext7-core:7.2.5'
+    implementation 'com.itextpdf:itext7-core:7.2.6'
     implementation 'com.itextpdf:html2pdf:4.0.5'
     implementation 'com.itextpdf:font-asian:7.2.5'
 
